@@ -256,12 +256,9 @@ class _Client:
 
         if msg is not None:
             if arb_id == 0xc000003:
-                print("AAAAA")
-                print(msg.data)
                 parsed_val = (int.from_bytes(msg.data, "little") & 0x00ffff0000) >> 16
-                print(parsed_val)
             else:
-                parsed_val = msg.data
+                parsed_val = int.from_bytes(msg.data, "little")
 
             return parsed_val
         else:

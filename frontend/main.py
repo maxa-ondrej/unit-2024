@@ -203,8 +203,6 @@ class MainWindow(QMainWindow):
             else:
                 print(f"Item with ID {item_id} not found in system configuration.")
 
-
-
         central_widget = QWidget()
         central_widget.setLayout(layout)
 
@@ -249,8 +247,6 @@ class InputWindow(QMainWindow):
             self.add_combobox.addItem(frame["name"], frame["id"])
 
         input_layout.addWidget(self.add_combobox)
-        print(self.filtered_frames)
-
 
         add_button = QPushButton("Add")
         add_button.clicked.connect(lambda: self.add_value(self.filtered_frames[self.add_combobox.currentIndex()]["id"], 0))
@@ -260,11 +256,15 @@ class InputWindow(QMainWindow):
         for frame in showed_ids():
             frame_id = frame["id"]
             frame_value = frame["value"]
-            frame_name = next(filter(lambda frame: frame["id"] == frame_id, self.filtered_frames))["name"]
+            frame_name = next(filter(lambda frame: frame["id"] == frame_id, read_config()))["name"]
             frame_layout = QBoxLayout(QBoxLayout.LeftToRight)
             frame_label = QLabel(f"{frame_name}: {frame_value}")
+            frame_direction = next(filter(lambda frame: frame["id"] == frame_id, read_config()))["direction"]
+            frame_input = QLineEdit()
+            frame_input.setPlaceholderText("Enter value")
             frame_layout.addWidget(frame_label)
-            self.list_layout.addLayout(frame_layout)
+            if frame_direction == FrameValueDirection.RX:
+              self.list_layout.addLayout(frame_layout)
 
         layout.addLayout(column_layout)
         layout.addWidget(divider())
@@ -296,14 +296,6 @@ class InputWindow(QMainWindow):
             self.add_combobox.addItem(frame["name"], frame["id"])
 
         self.list_layout = QVBoxLayout()
-        for frame in showed_ids():
-            frame_id = frame["id"]
-            frame_value = frame["value"]
-            frame_name = next(filter(lambda frame: frame["id"] == frame_id, self.filtered_frames))["name"]
-            frame_layout = QBoxLayout(QBoxLayout.LeftToRight)
-            frame_label = QLabel(f"{frame_name}: {frame_value}")
-            frame_layout.addWidget(frame_label)
-            self.list_layout.addLayout(frame_layout)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)

@@ -2,7 +2,7 @@
 
 [[package]]
 name = "can-sdk"
-version = "0.1.8"
+version = "0.1.9"
 description = ""
 optional = false
 python-versions = "~3.9"
