@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "can-sdk"
+version = "0.1.8"
+description = ""
+authors = ["Jakub Srnka <jakub.srnka@volny.cz>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.9"
+python-can = "^4.3.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

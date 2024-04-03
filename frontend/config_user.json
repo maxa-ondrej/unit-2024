@@ -1,0 +1,1 @@
+{"showed_ids": [{"id": 5, "value": 1500}, {"id": 0, "value": 0}, {"id": 1, "value": 0}, {"id": 2, "value": 0}, {"id": 3, "value": 0}, {"id": 4, "value": 0}], "busDetails": {"bustype": "pcan", "channel": "PCAN_USBBUS1", "bitrate": 250000}}

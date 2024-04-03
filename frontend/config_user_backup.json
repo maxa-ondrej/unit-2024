@@ -1,0 +1,21 @@
+{
+  "showed_ids": [
+    {
+      "id": 5,
+      "value": 1500
+    },
+    {
+      "id": 1,
+      "value": 50
+    },
+    {
+      "id": 2,
+      "value": 69
+    }
+  ],
+  "busDetails": {
+    "bustype": "pcan",
+    "channel": "PCAN_USBBUS1",
+    "bitrate": 250000
+  }
+}

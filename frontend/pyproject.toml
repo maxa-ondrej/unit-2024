@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "alejgang-unit-2024-comap"
+version = "0.1.0"
+description = ""
+authors = ["Martin Rosenberg <nitram.rosenberg@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "~3.9"
+pyside6 = "^6.6.3.1"
+can-sdk = {path = "../can-sdk"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "test-comms"
+version = "0.1.0"
+description = ""
+authors = ["Martin Rosenberg <nitram.rosenberg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "~3.9"
+can-j1939 = "^2.0.12"
+pyside6 = "^6.6.3.1"
+sdk = {path = "sdk"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
